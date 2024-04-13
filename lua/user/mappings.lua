@@ -14,7 +14,6 @@ return {
     ["<C-u>"] = { "<C-u>zz" },
     ["n"] = { "nzzzv" },
     ["N"] = { "Nzzzv" },
-    -- Just a little test
     -- -- Show help actions with telescope
     --
     -- ["<leader>cch"] = {
