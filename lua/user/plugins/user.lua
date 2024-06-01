@@ -13,12 +13,12 @@ return {
       -- refer to the configuration section below
     },
   },
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function() require("copilot").setup {} end,
-  },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function() require("copilot").setup {} end,
+  -- },
   {
     "github/copilot.vim",
     -- cmd = "Copilot",
@@ -30,11 +30,22 @@ return {
     config = function() require("copilot_cmp").setup() end,
   },
   { "akinsho/git-conflict.nvim", version = "*", config = true, lazy = false },
+  { "nvim-tree/nvim-web-devicons", lazy = false },
+  { "ThePrimeagen/harpoon" },
+
+  { "microsoft/python-type-stubs" },
   -- {
   --   "ray-x/lsp_signature.nvim",
   --   event = "BufRead",
   --   config = function()
   --     require("lsp_signature").setup()
   --   end,
-  -- },
+  -- },-- install with yarn or npm
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    ft = { "markdown" },
+  },
 }

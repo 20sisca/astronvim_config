@@ -241,9 +241,13 @@ if is_available "telescope.nvim" then
   maps.n["<leader>g"] = sections.g
   maps.n["<leader>gb"] =
     { function() require("telescope.builtin").git_branches { use_file_path = true } end, desc = "Git branches" }
+  maps.n["<leader>gg"] = {
+    "<cmd>:vertical Git<cr>",
+    desc = "Git (repository)",
+  }
   maps.n["<leader>gc"] = {
-    function() require("telescope.builtin").git_commits { use_file_path = true } end,
-    desc = "Git commits (repository)",
+    "<cmd>:vertical Git log<cr>",
+    desc = "Git log (repository)",
   }
   maps.n["<leader>gC"] = {
     function() require("telescope.builtin").git_bcommits { use_file_path = true } end,
@@ -294,7 +298,8 @@ if is_available "telescope.nvim" then
     maps.n["<leader>uD"] =
       { function() require("notify").dismiss { pending = true, silent = true } end, desc = "Dismiss notifications" }
   end
-  maps.n["<leader>fo"] = { function() require("telescope.builtin").oldfiles() end, desc = "Find history" }
+  maps.n["<leader>fo"] =
+    { function() require("telescope.builtin").oldfiles { cwd_only = true } end, desc = "Find history" }
   maps.n["<leader>fr"] = { function() require("telescope.builtin").registers() end, desc = "Find registers" }
   maps.n["<leader>ft"] =
     { function() require("telescope.builtin").colorscheme { enable_preview = true } end, desc = "Find themes" }

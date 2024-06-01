@@ -196,7 +196,10 @@ M.on_attach = function(client, bufnr)
 
   if client.supports_method "textDocument/definition" then
     lsp_mappings.n["gd"] = {
-      function() vim.lsp.buf.definition() end,
+      function()
+        vim.lsp.buf.definition()
+        vim.cmd("norm zz<cr>")
+      end,
       desc = "Show the definition of current symbol",
     }
   end

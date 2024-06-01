@@ -13,7 +13,7 @@ return { -- override nvim-cmp plugin
       { name = "luasnip", priority = 750 },
       { name = "buffer", priority = 500 },
       { name = "path", priority = 250 },
-      { name = "copilot", priority = 800 }, -- add new source
+      { name = "copilot", priority = 1800 }, -- add new source
     }
   end,
 }
