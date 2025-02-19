@@ -156,6 +156,9 @@ if is_available "gitsigns.nvim" then
   maps.n["<leader>gl"] = { function() require("gitsigns").blame_line() end, desc = "View Git blame" }
   maps.n["<leader>gL"] = { function() require("gitsigns").blame_line { full = true } end, desc = "View full Git blame" }
   maps.n["<leader>gp"] = { function() require("gitsigns").preview_hunk() end, desc = "Preview Git hunk" }
+  maps.n["<leader>gP"] = { function() vim.cmd "!git push --force" end, desc = "Force push to Git" }
+  maps.n["<leader>gf"] = { function() vim.cmd "!git fetch" end, desc = "Git fetch" }
+  maps.n["<leader>gk"] = { function() vim.cmd "!git rebase -i origin/dev" end, desc = "Git rebase -i origin/dev" }
   maps.n["<leader>gh"] = { function() require("gitsigns").reset_hunk() end, desc = "Reset Git hunk" }
   maps.n["<leader>gr"] = { function() require("gitsigns").reset_buffer() end, desc = "Reset Git buffer" }
   maps.n["<leader>gs"] = { function() require("gitsigns").stage_hunk() end, desc = "Stage Git hunk" }
@@ -246,7 +249,7 @@ if is_available "telescope.nvim" then
     desc = "Git (repository)",
   }
   maps.n["<leader>gc"] = {
-    "<cmd>:vertical Git log<cr>",
+    "<cmd>:Git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit<CR>",
     desc = "Git log (repository)",
   }
   maps.n["<leader>gC"] = {

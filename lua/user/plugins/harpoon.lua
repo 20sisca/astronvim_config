@@ -1,6 +1,10 @@
 return {
   "ThePrimeagen/harpoon",
   keys = {
+    { "mq", function() require("harpoon.ui").nav_file(8) end },
+    { "mw", function() require("harpoon.ui").nav_file(7) end },
+    { "me", function() require("harpoon.ui").nav_file(6) end },
+    { "mr", function() require("harpoon.ui").nav_file(5) end },
     { "ma", function() require("harpoon.ui").nav_file(4) end },
     { "ms", function() require("harpoon.ui").nav_file(3) end },
     { "md", function() require("harpoon.ui").nav_file(2) end },

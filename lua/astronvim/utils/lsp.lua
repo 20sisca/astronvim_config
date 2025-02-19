@@ -198,7 +198,7 @@ M.on_attach = function(client, bufnr)
     lsp_mappings.n["gd"] = {
       function()
         vim.lsp.buf.definition()
-        vim.cmd("norm zz<cr>")
+        vim.cmd "norm zz<cr>"
       end,
       desc = "Show the definition of current symbol",
     }
@@ -236,7 +236,16 @@ M.on_attach = function(client, bufnr)
           if autoformat_enabled == nil then autoformat_enabled = vim.g.autoformat_enabled end
           if autoformat_enabled and ((not autoformat.filter) or autoformat.filter(bufnr)) then
             vim.lsp.buf.format(extend_tbl(M.format_opts, { bufnr = bufnr }))
-          end
+          end -- Function to run ruff using pipenv
+          require("conform").format { bufnr = bufnr }
+          vim.lsp.buf.code_action {
+            context = {
+              only = { "source.fixAll.ruff" },
+            },
+            apply = true,
+          }
+          -- local function run_ruff() vim.cmd "silent! :!pipenv run ruff --fix %" end
+          -- run_ruff()
         end,
       })
       lsp_mappings.n["<leader>uf"] = {

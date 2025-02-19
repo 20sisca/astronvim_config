@@ -32,6 +32,7 @@ return {
   { "akinsho/git-conflict.nvim", version = "*", config = true, lazy = false },
   { "nvim-tree/nvim-web-devicons", lazy = false },
   { "ThePrimeagen/harpoon" },
+  { "sindrets/diffview.nvim", lazy = false },
 
   { "microsoft/python-type-stubs" },
   -- {
