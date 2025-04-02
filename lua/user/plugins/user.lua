@@ -21,9 +21,13 @@ return {
   -- },
   {
     "github/copilot.vim",
+    
     -- cmd = "Copilot",
     -- event = "InsertEnter",
     -- config = function() require("copilot").setup {} end,
+    init = function()
+      vim.g.copilot_node_command = "~/.nvm/versions/node/v22.5.1/bin/node"
+    end,
   },
   {
     "zbirenbaum/copilot-cmp",
