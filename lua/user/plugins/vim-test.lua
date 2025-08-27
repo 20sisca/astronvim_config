@@ -1,9 +1,4 @@
 vim.lsp.buf.execute_command { command = "_typescript.organizeImports", arguments = { vim.fn.expand "%:p" } }
-
--- vim.lsp.buf.code_action {
---   context = { only = { "source.organizeImports" } },
---   range = { start = { line = 0, character = 0 }, ["end"] = { line = vim.fn.line("$") - 1, character = 0 } }
--- }
 local g = vim.g
 g["test#python#runner"] = "djangotest"
 -- g["test#python#djangotest#executable"] = "docker compose run --rm shell-financial_services test --keepdb"

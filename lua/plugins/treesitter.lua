@@ -41,12 +41,10 @@ return {
       ensure_installed = {
         "bash",
         "c",
-        "cmake",
         "lua",
         "markdown",
         "markdown_inline",
         "python",
-        "typescript",
         "query",
         "vim",
         "vimdoc",

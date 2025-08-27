@@ -1,8 +1,16 @@
 return {
   "jose-elias-alvarez/null-ls.nvim",
   opts = function(_, config)
-    -- config variable is the default configuration table for the setup function call
-    -- local null_ls = require "null-ls"
+    local null_ls = require "null-ls"
+
+    -- Add proper on_attach function to handle the error
+    config.on_attach = function(client, bufnr)
+      -- Add this protection to prevent the error
+      if not client.supports_method then return end
+      
+      -- You can add your existing on_attach functionality here if needed
+      -- For example: buffer-local keymappings, formatting on save, etc.
+    end
 
     -- Check supported formatters and linters
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting

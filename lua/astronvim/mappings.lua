@@ -248,6 +248,10 @@ if is_available "telescope.nvim" then
     "<cmd>:vertical Git<cr>",
     desc = "Git (repository)",
   }
+  maps.n["<leader>ga"] = {
+    "<cmd>:vsplit | terminal git fetch && git rebase -i origin/dev<cr>",
+    desc = "Git fetch and rebase (interactive)",
+  }
   maps.n["<leader>gc"] = {
     "<cmd>:Git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit<CR>",
     desc = "Git log (repository)",
