@@ -237,7 +237,7 @@ M.on_attach = function(client, bufnr)
           if autoformat_enabled and ((not autoformat.filter) or autoformat.filter(bufnr)) then
             vim.lsp.buf.format(extend_tbl(M.format_opts, { bufnr = bufnr }))
           end -- Function to run ruff using pipenv
-          -- require("conform").format { bufnr = bufnr }
+          require("conform").format { bufnr = bufnr }
           vim.lsp.buf.code_action {
             context = {
               only = { "source.fixAll.ruff" },
